@@ -1,0 +1,262 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.glitter-text {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    color: #d2952a;
+    transition: color 1s ease-in-out;
+}
+
+#birthday-message {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    animation: slideIn 1s forwards;
+    max-width: 80%;
+}
+
+#birthday-message h1 {
+    font-size: 2em;
+    font-weight: bold;
+    color: #0a0909;
+    text-shadow: 0 0 10px rgba(0, 255, 150, 0.8);
+    animation: scaleUp 1s infinite alternate;
+}
+
+.heart{
+    animation: beatHeart 1s infinite alternate;
+}
+
+@keyframes scaleUp {
+    to {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes beatHeart {
+    to {
+        transform: scale(1.2);
+    }
+}
+
+#birthday-message p {
+    font-size: 1.5em;
+    color: #f51e06;
+    text-shadow: 0 0 10px rgba(0, 255, 150, 0.8);
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    to {
+        transform: scale(1.2);
+    }
+}
+
+
+.hidden {
+    display: block;
+}
+
+@keyframes slideIn {
+    to {
+        bottom: 20%;
+    }
+}
+
+#gift-box {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    user-select: none;
+    transition: transform 0.5s ease-in-out, opacity 3s ease-in-out;
+}
+
+.click-text {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(248, 241, 241);
+    font-size: 23px;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.gift-img {
+    width: 300px;
+    height: 300px;
+}
+
+.vibrate {
+    animation: vibrate 0.2s ease-in-out infinite;
+    opacity: 0;
+}
+
+@keyframes vibrate {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(5px);
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #birthday-message {
+        max-width: 90%;
+    }
+    .glitter-text {
+        font-size: 1.5em;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    #birthday-message {
+        max-width: 95%;
+    }
+    .glitter-text {
+        font-size: 1.2em;
+    }
+}
+
+@keyframes heartAnimation {
+    0% {
+        transform: translateY(-100vh) rotate(0deg) scale(3);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg) scale(1.5);
+    }
+}
+
+.heart {
+    position: absolute;
+    color: #f51e06;
+    width: 30px;
+    height: 30px;
+    animation: heartAnimation 5s linear infinite;
+    opacity: 0.8;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 26px;
+}
+
+.heart::before {
+    left: 0;
+    transform: rotate(-45deg);
+    transform-origin: 100% 0;
+}
+
+.heart::after {
+    left: 10px;
+    transform: rotate(45deg);
+    transform-origin: 0 0;
+}
+.heart:nth-child(2) {
+    left: 10%; animation-delay: 1s;
+} 
+
+.heart:nth-child(3) {
+    left: 20%; animation-delay: 3s;
+}
+
+.heart:nth-child(4){
+    left: 30%; animation-delay: 0.5s;
+}
+.heart:nth-child(5){
+    left: 40%; animation-delay: 5s;
+}
+.heart:nth-child(6){
+    left: 50%; animation-delay: 2s;
+}
+.heart:nth-child(7){
+    left: 60%; animation-delay: 1s;
+}
+.heart:nth-child(8){
+    left: 70%; animation-delay: 3s;
+} 
+.heart:nth-child(9){
+    left: 80%; animation-delay: 2s;
+}
+.heart:nth-child(10){
+    left: 90%; animation-delay: 5s;
+}
+.heart:nth-child(11){
+    left: 100%; animation-delay: 4s;
+}
+
+@keyframes balloonAnimation {
+    0% {
+        transform: translateY(-100vh) rotate(-40deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(40deg);
+    }
+}
+
+.balloon {
+    position: absolute;
+    width: 50px;
+    height: 80px;
+    animation: balloonAnimation 5s linear infinite;
+    opacity: 0.8;
+}
+
+.balloon:nth-child(2) {
+    left: 20%;
+    animation-delay: 0.5s; 
+}
+
+.balloon:nth-child(3) {
+    left: 60%;
+    animation-delay: 3s;
+}
+.bal{
+    width: 200px;
+    height: 300px;
+}
+
+
